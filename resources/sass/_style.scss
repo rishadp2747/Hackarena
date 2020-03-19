@@ -1,0 +1,45 @@
+
+
+body{
+    background-color: #000000;
+    
+    color:#4d4dff !important;
+    font-size: 20px;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: Hack;
+}
+
+a{
+    color: #4d4dff !important;
+}
+
+.navbar{
+    font-family: Hack;
+    background-color: rgba(255,255,255,0.05);
+    min-height: 100px;
+    box-shadow: 0px -1px 14px 2px #4d4dff47;
+}
+
+.slide{
+    opacity: 0.6;
+}
+
+
+.footer{
+
+    background-color: rgba(255,255,255,0.05);
+    height: 0px;
+    box-shadow: 0px -1px 14px 2px #4d4dff47;
+}
+
+.design{
+
+    margin:0px;
+    font-size: 18px;
+}
+.copy{
+    
+    font-size: 15px;
+}

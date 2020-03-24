@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class LoginController extends Controller
 {
@@ -45,5 +47,13 @@ class LoginController extends Controller
 
     public function showLoginForm(){
         return view('auth.login',['title' => 'Login']);
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        $user->update([
+            'login_time' => Carbon::now()->toDateTimeString(),
+            'ip_address' => $request->getClientIp()
+        ]);
     }
 }

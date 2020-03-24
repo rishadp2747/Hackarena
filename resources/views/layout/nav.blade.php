@@ -17,7 +17,7 @@
                 @endif
             @else 
                 <li class="nav-item mr-3 p-2">
-                    <a>Score : 0</a>
+                <a>Score : {{ $score }}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

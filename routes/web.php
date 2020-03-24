@@ -21,3 +21,6 @@ Route::get('/', function () {
 Route::get('/register', function () {
     return view('pages.register');
 });
+Auth::routes(['verify' => true]);
+
+Route::get('/home', 'HomeController@index')->name('home');

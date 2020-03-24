@@ -43,7 +43,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        return view('auth.login',['title','Register']);
+        return view('auth.register',['title'=>'Register']);
     }
     
 

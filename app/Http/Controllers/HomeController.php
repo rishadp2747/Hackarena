@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Challenge;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.dashboard')->with('title','Dashboard');
+
+        $roles = DB::table('challenges')->pluck('challenge_name');
+
+        return view('pages.dashboard',['title' => 'Dashboard', 'challenges' => $roles]);
     }
 }

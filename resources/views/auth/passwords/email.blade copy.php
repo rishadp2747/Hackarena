@@ -1,15 +1,14 @@
+@extends('layouts.app')
 
-@extends('layout.outline')
 @section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Reset Password') }}</div>
 
-    @include('layout.nav')
-
-    <div class="container verify mt-5">
-
-        <div class="d-flex  flex-row justify-content-center align-content-center  ">
-            <div class=" text-center register-content w-100 mb-5" > 
-                <h3>Reset Password</h3>
-                @if (session('status'))
+                <div class="card-body">
+                    @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
@@ -34,34 +33,15 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-outline-primary w-100 mt-3">
+                                <button type="submit" class="btn btn-primary">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
                             </div>
                         </div>
                     </form>
+                </div>
             </div>
-        
         </div>
-
     </div>
-
-    <div class="footer d-flex  justify-content-center" style="position:fixed;">
-        
-         <div class="pt-4 text-center">
-            <p class="design">Developed & Designed by <a href="#">FCS</a></p>
-            <p class="copy">All right &copy; 2019-20 reserved </p>
-        </div>
-      
-    </div>
-    
-
-
-
+</div>
 @endsection
-    
-
-
-
-
- 

@@ -1,20 +1,19 @@
+@extends('layouts.app')
 
-@extends('layout.outline')
 @section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Reset Password') }}</div>
 
-    @include('layout.nav')
+                <div class="card-body">
+                    <form method="POST" action="{{ route('password.update') }}">
+                        @csrf
 
-    <div class="container verify mt-5">
+                        <input type="hidden" name="token" value="{{ $token }}">
 
-        <div class="d-flex  flex-row justify-content-center align-content-center  ">
-            <div class=" text-center register-content w-100 mb-5" > 
-                <h3>Reset Password</h3>
-                <form method="POST" action="{{ route('password.update') }}">
-                    @csrf
-
-                    <input type="hidden" name="token" value="{{ $token }}">
-
-                    <div class="form-group row">
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
@@ -52,36 +51,15 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-outline-primary w-100">
+                                <button type="submit" class="btn btn-primary">
                                     {{ __('Reset Password') }}
                                 </button>
                             </div>
                         </div>
-               
-
-                </form>
+                    </form>
+                </div>
             </div>
-        
         </div>
-
     </div>
-
-    <div class="footer d-flex  justify-content-center" style="position:fixed;">
-        
-         <div class="pt-4 text-center">
-            <p class="design">Developed & Designed by <a href="#">FCS</a></p>
-            <p class="copy">All right &copy; 2019-20 reserved </p>
-        </div>
-      
-    </div>
-    
-
-
-
+</div>
 @endsection
-    
-
-
-
-
- 

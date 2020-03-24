@@ -10982,3 +10982,14 @@ button {
   border-top: 1px solid #4d4dff47;
 }
 
+.dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid #4d4dff47;
+  color: white;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+

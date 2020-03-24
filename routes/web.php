@@ -14,13 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.home');
+    return view('pages.home',['title'=>'Home']);
 });
 
 
-Route::get('/register', function () {
-    return view('pages.register');
-});
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>HackArena | </title>
+    <title>HackArena | {{$title ?? ''}}</title>
         <!--meta tags -->
         <link rel="icon" href="{{asset('img/logo/icon.png')}}" type="image/x-icon"/>
         <meta charset="UTF-8">

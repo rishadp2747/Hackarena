@@ -18,12 +18,12 @@ class CreateUsersTable extends Migration
             $table->string('username');
             $table->string('name');
             $table->char('mobile_no',10);
-            $table->ipAddress('ip_address');
+            $table->ipAddress('ip_address')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->bigInteger('total_score');
-            $table->timestamp('login_time');
+            $table->bigInteger('total_score')->default(0);
+            $table->timestamp('login_time')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

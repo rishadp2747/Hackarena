@@ -4,27 +4,29 @@
 
     @include('layout.nav')
 
-    <div class="d-flex banner justify-content-center align-content-center " style="background : url({{asset('img/Hacker-Hero.webp')}}))" >
-        
-           
-            <h3>REGISTER</h3>
-        
+    
 
-    </div>
-
-    <div class="container">
+<div class="container" style="background-image:url('{{asset('css/app.css')}}')">
 
         <div class="d-flex p-5 flex-row">
             <div class="p-2 text-center  " > 
-                <h3>About Hackarena</h3>
-                <p class="text-justify p-3">
-                    Welcome to HackArena 2.0. A learning CTF from the developers of CTF. Play around and have fun.
-                    CTF (Capture The Flag) is a kind of information security competition that challenges contestants 
-                    to solve a variety of tasks ranging from a scavenger hunt on wikipedia to basic programming exercises, 
-                    to hacking your way into a server to steal data. In these challenges, the contestant is usually asked 
-                    to find a specific piece of text that may be hidden on the server or behind a webpage. This goal
-                    is called the flag, hence the name!
-                </p>
+                <h3>REGISTER</h3>
+                <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
             </div>
         
         </div>

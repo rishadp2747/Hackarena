@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class LoginController extends Controller
 {
@@ -37,4 +39,24 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+<<<<<<< HEAD
+=======
+
+    public function username()
+    {
+        return 'username';
+    }
+
+    public function showLoginForm(){
+        return view('auth.login',['title' => 'Login']);
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        $user->update([
+            'login_time' => Carbon::now()->toDateTimeString(),
+            'ip_address' => $request->getClientIp()
+        ]);
+    }
+>>>>>>> 6d46e1a94d9fc46aada29ffbb5d90259890f344c
 }

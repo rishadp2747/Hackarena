@@ -31,6 +31,6 @@ class HomeController extends Controller
         $roles = DB::table('challenges')->pluck('challenge_name');
         $score  = Auth::user()->total_score;
 
-        return view('pages.dashboard',['title' => 'Dashboard', 'challenges' => $roles]);
+        return view('pages.dashboard',['title' => 'Dashboard', 'score' => $score, 'challenges' => $roles]);
     }
 }

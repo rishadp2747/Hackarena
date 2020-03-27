@@ -32,13 +32,7 @@ class AppServiceProvider extends ServiceProvider
         //
         schema::defaultStringLength(191);
 
-        
-
-       
-            
-        View::share('score',Auth::user()->total_score);
-       
-
+   
         
     }
 }

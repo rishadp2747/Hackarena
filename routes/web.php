@@ -23,3 +23,5 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('challenge','ChallengesController');
+
+Route::get('/findme', 'FindmeController@index');

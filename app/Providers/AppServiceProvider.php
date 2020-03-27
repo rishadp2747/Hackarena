@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Auth;
+
 
 
 
@@ -28,6 +31,14 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         schema::defaultStringLength(191);
+
+        
+
+       
+            
+        View::share('score',Auth::user()->total_score);
+       
+
         
     }
 }

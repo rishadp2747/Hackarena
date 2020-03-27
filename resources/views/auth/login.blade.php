@@ -17,7 +17,7 @@
                         @csrf
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" aria-describedby="usernameHelp" placeholder="Enter Userame">
+                        <input type="text"autofocus class="form-control @error('username') is-invalid @enderror" id="username" name="username" aria-describedby="usernameHelp" placeholder="Enter Userame">
                         @error('username')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

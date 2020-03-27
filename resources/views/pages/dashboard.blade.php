@@ -10,8 +10,8 @@
 
     <div class="container">
 
-        <div class="d-flex p-5 flex-row">
-            <div class="p-2 text-center  " > 
+        <div class="d-flex p-5 flex-column">
+            <div class="p-2 text-center mb-5  " > 
                 <h3>About Hackarena</h3>
                 <p class="text-justify p-3">
                     Welcome to HackArena 2.0. A learning CTF from the developers of CTF. Play around and have fun.
@@ -21,6 +21,17 @@
                     to find a specific piece of text that may be hidden on the server or behind a webpage. This goal
                     is called the flag, hence the name!
                 </p>
+            </div>
+
+            <div class="p-2 text-center  " > 
+                <h3>Challenges</h3>
+                <div class="d-flex flex-wrap justify-content-center my-4">
+
+                    @foreach ($challenges as $item)
+                        <button type="button" class="btn btn-outline-primary btn-lg m-3">{{$item}}</button>
+                    @endforeach
+                        
+                </div>
             </div>
         
         </div>

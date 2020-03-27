@@ -22,6 +22,10 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+<<<<<<< HEAD
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+=======
+Route::resource('challenge','ChallengesController');
+>>>>>>> 6d46e1a94d9fc46aada29ffbb5d90259890f344c

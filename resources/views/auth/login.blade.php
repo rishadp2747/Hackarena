@@ -60,7 +60,7 @@
                     
 
                     <div class="d-flex justify-content-center w-100 mt-4  p-2 reg-footer">
-                            <a href="{{ route('login') }}" >I Don't have an account. Register ..</a><br>
+                            <a href="{{ route('register') }}" >I Don't have an account. Register ..</a><br>
                     </div>
                 </form>
             </div>

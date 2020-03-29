@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ChallengesController extends Controller
 {
@@ -14,6 +15,18 @@ class ChallengesController extends Controller
     public function index()
     {
         //
+    }
+     
+
+    public function findme()
+    {   
+        //user authenticated 
+        if (Auth::check()) {
+            return view('pages.findme',['title' => 'Find Me']);
+        }else{
+            return view('auth.login', ['title' => 'Login']);
+        }
+        
     }
 
     /**

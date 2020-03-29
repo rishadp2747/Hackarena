@@ -28,6 +28,7 @@
                     They dug it from end-to-end. But they could not found the treasure. 
                     They became sad.
                   </p>
+                  <!-- flag{48dd4e5724c183da3e1b137b6fb06927} -->
                   <p class="text-justify p-3">
                     In the meantime, an old passed that way.
                     He knew what their father meant. He advised them to sow seeds in the farm. 

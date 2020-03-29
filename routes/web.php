@@ -24,4 +24,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('challenge','ChallengesController');
 
-Route::get('/findme', 'FindmeController@index');
+Route::get('challenges/findme', 'FindmeController@index')->name('findme')->middleware('auth');

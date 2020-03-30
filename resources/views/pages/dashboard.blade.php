@@ -28,7 +28,7 @@
                 <div class="d-flex flex-wrap justify-content-center my-4">
 
                     @foreach ($challenges as $item)
-                        <a href="{{route($item->challenge_route)}}"><button type="button" class="btn btn-outline-primary btn-lg m-3">{{$item->challenge_name}}</button></a>
+                        <a href="{{route($item->challenge_route,['id'=>$item->id])}}"><button type="button" class="btn btn-outline-primary btn-lg m-3">{{$item->challenge_name}}</button></a>
                     @endforeach
                         
                 </div>

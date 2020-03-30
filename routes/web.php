@@ -23,4 +23,4 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('challenge','ChallengesController');
-Route::get('challenges/findme', 'ChallengesController@findme')->name('findme')->middleware('auth');
+Route::get('challenges/findme/{id}', 'ChallengesController@findme')->name('findme')->middleware('auth');

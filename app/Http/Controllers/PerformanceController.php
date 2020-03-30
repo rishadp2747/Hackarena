@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class ChallengesController extends Controller
+class PerformanceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,18 +14,6 @@ class ChallengesController extends Controller
     public function index()
     {
         //
-    }
-     
-
-    public function findme($id)
-    {   
-        //user authenticated 
-        if (Auth::check()) {
-            return view('pages.findme',['title' => 'Find Me','id' => $id]);
-        }else{
-            return view('auth.login', ['title' => 'Login']);
-        }
-        
     }
 
     /**

@@ -24,4 +24,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('challenge','ChallengesController');
 Route::get('challenges/findme/{id}', 'ChallengesController@findme')->name('findme')->middleware('auth');
-Route::get('challenges/updation', 'PerformanceController')->name('storePerformance')->middleware('auth');
+Route::post('challenges/updation/{id}', 'PerformanceController@store')->name('storePerformance')->middleware('auth');
+

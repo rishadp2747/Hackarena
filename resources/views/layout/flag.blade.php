@@ -1,6 +1,6 @@
 <div class="d-flex  flex-row justify-content-center align-content-center  ">
                 <div class=" text-center register-content w-100 mb-5" > 
-                    <form method="POST" action="{{route(storePerformance)}}">
+                    <form method="POST" action="{{route('storePerformance',['id'=>1])}}">
                             @csrf
                         <div class="form-group d-flex flex-row">
                             <label for="flag">Flag</label>

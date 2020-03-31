@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PerformanceController extends Controller
 {
@@ -34,7 +35,24 @@ class PerformanceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'flag' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $score= DB::table('challenges')
+                   ->select('challenge_score')
+                   ->where('id'=>$id)
+        $ref_flag = DB::table('challenges')
+                   ->select('challenge_flag')
+                   ->where('id'=>$id)
+        if $ref_flag = $flag{
+            return User::create([
+            't_score' => $data['name'];
+        ]);
+        }
+    
     }
 
     /**

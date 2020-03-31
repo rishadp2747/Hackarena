@@ -4,20 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Auth\Middleware\Authenticate;
+
 class FindmeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
      */
     public function index()
     {
         //user authenticated
-    //    if (Auth::check()) 
-    //    return view('pages.findme', [ 'title' => 'Find me']);
-    //    else
-        //   return view('auth.login',[ 'title' => 'Login']); 
+         if (Auth::check()) {
+      return view('pages.findme', [ 'title' => 'Find me']); }
+        else {
+     return view('auth.login',[ 'title' => 'Login']); }
     }
 
     /**

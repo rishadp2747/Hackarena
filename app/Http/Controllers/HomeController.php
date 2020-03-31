@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Challenge;
 
-
 class HomeController extends Controller
 {
     /**
@@ -30,7 +29,6 @@ class HomeController extends Controller
 
         $roles = DB::table('challenges')->select('challenge_name','challenge_route','id')->get();
         $score  = Auth::user()->total_score;
-
-        return view('pages.dashboard',['title' => 'Dashboard', 'challenges' => $roles, 'score' => $score]);
+        return view('pages.dashboard',['title' => 'Dashboard', 'challenges' => $roles, 'score' => $score ]);
     }
 }

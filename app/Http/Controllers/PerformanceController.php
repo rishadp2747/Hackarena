@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
-
-use  Validator;
+use  Illuminate\Support\Facades\Validator;
 
 class PerformanceController extends Controller
 {
@@ -36,16 +35,21 @@ class PerformanceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
         //
      $request->input('flag');
-     $validator::make($request->all(),[ 'flag' => 'required']);
+     $validator=Validator::make($request->all(),[ 'flag' => 'required']);
      if($validator->fails()) {
          return redirect()->back()->withErrors($validator)->withInput();
     }
-
+    $flag = DB::table('challenges')->select('challenge_flag')->where('id',$id)->get();
+    if($request==$flag)
+    {
+      echo("hii");
     }
+    }
+    
     /**
      * Display the specified resource.
      *

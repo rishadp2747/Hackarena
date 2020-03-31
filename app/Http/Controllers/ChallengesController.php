@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Auth\Middleware\Auth;
+
 class ChallengesController extends Controller
 {
     /**
@@ -11,6 +13,15 @@ class ChallengesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function findme()
+    {
+    
+        // if (Auth::check()) 
+        return view('pages.findme', [ 'title' => 'Find me' , 'id' => $id ]);
+        
+       //  else
+        //  return view('auth.login',[ 'title' => 'Login']); 
+       }
     public function index()
     {
         //

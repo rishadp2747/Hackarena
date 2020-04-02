@@ -1,6 +1,8 @@
 
 @extends('layout.outline')
+
 @section('content')
+    @include('layout.success')
 
     @include('layout.nav')
 
@@ -28,7 +30,7 @@
                 <div class="d-flex flex-wrap justify-content-center my-4">
 
                     @foreach ($challenges as $item)
-                        <button type="button" class="btn btn-outline-primary btn-lg m-3">{{$item}}</button>
+                        <a role="button" class="btn  btn-outline-primary dash-btn btn-lg m-3" href='{{route($item->challenge_route, ['id' => $item->id])}}'>{{$item->challenge_name}}</a>
                     @endforeach
                         
                 </div>

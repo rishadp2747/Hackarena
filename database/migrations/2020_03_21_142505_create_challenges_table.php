@@ -17,6 +17,7 @@ class CreateChallengesTable extends Migration
             $table->id();
             $table->string('challenge_name');
             $table->bigInteger('challenge_score');
+            $table->string('challenge_route');
             $table->string('challenge_flag');
             $table->timestamps();
         });

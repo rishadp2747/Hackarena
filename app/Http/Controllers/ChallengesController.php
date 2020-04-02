@@ -81,4 +81,11 @@ class ChallengesController extends Controller
     {
         //
     }
+
+
+
+    public function findme($id){
+        //function to show findme challenge page
+        return view('pages.findme',['title' => 'Find Me', 'id' => $id]);
+    }
 }

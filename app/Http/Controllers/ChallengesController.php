@@ -26,7 +26,7 @@ class ChallengesController extends Controller
         //
     }
 
-    /**
+    /**,
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -69,6 +69,24 @@ class ChallengesController extends Controller
     public function update(Request $request, $id)
     {
         //
+    }
+    public function findme($id)
+    {
+        
+
+        return view('pages.findme',['title' => 'Find Me','id'=>$id]); 
+ 
+
+
+    }
+    public function whoamI($id)
+    {
+        
+
+        return view('pages.whoamI',['title' => 'Who am I?','id'=>$id]); 
+ 
+
+
     }
 
     /**

@@ -2,6 +2,7 @@
 @extends('layout.outline')
 @section('content')
 
+    @include('layout.success')
     @include('layout.nav')
 
     <div class="d-flex justify-content-center align-content-center h-50 slide" >
@@ -28,7 +29,10 @@
                 <div class="d-flex flex-wrap justify-content-center my-4">
 
                     @foreach ($challenges as $item)
-                        <button type="button" class="btn btn-outline-primary btn-lg m-3">{{$item}}</button>
+                        <a href="{{ route($item->challenge_route,['id' => $item->id]) }}" type="button" class="btn btn-outline-primary btn-lg m-3">{{$item->challenge_name}}
+                        </a>
+
+                       
                     @endforeach
                         
                 </div>
@@ -46,6 +50,7 @@
         </div>
       
     </div>
+    
     
 
 

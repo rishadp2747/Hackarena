@@ -49661,8 +49661,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /media/rishad/Documents/FCS/Hackarena/15 march 2020/dev/hackarena/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /media/rishad/Documents/FCS/Hackarena/15 march 2020/dev/hackarena/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /media/rishad/Documents/FCS/Hackarena/15 march 2020/hackarena-2.0/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /media/rishad/Documents/FCS/Hackarena/15 march 2020/hackarena-2.0/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

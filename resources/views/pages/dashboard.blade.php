@@ -1,9 +1,6 @@
-
 @extends('layout.outline')
-@section('content')
-
+@section('content'@include('layout.success'))
     @include('layout.nav')
-
     <div class="d-flex justify-content-center align-content-center h-50 slide" >
         <img src="{{asset('img/slide.png')}}"  class="w-100" height="650">
     </div>

@@ -7,7 +7,6 @@
     
 
     <div class="container">
-
         <div class="d-flex p-5 flex-column">
             <div class="p-2 text-center mb-5  " > 
                 <h3>Find Me</h3>
@@ -38,6 +37,7 @@
                   </p>
             </div>
          @include('layout.flag')
+         @include('layout.flash')
         </div>
 
     </div>

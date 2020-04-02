@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $roles = DB::table('challenges')->select('challenge_name','challenge_route','id')->get(); 
+        $roles = DB::table('challenges')->select('challenge_name','challenge_route','id','challenge_score','challenge_flag')->get(); 
         $score  = Auth::user()->total_score;
 
         return view('pages.dashboard',['title' => 'Dashboard', 'score' => $score, 'challenges' => $roles]);

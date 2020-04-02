@@ -25,4 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('challenge','ChallengesController');
 Route::get('challenges/findme/{id}', 'ChallengesController@findme')->name('findme')->middleware('auth');
 Route::post('challenges/updation/{id}', 'PerformanceController@store')->name('storePerformance')->middleware('auth');
-
+Route::get('challenges/letherlogin/{id}', 'ChallengesController@letherlogin')->name('letherlogin')->middleware('auth');
+Route::get('challenges/letherforgot/{id}', 'ChallengesController@letherforgot')->name('letherforgot')->middleware('auth');
+Route::post('challenges/checkit/{id}', 'PerformanceController@checkit')->name('checkit')->middleware('auth');

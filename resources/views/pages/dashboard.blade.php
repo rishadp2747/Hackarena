@@ -1,10 +1,10 @@
 @extends('layout.outline')
-@section('content'@include('layout.success'))
+@section('content')
     @include('layout.nav')
+    @include('layout.success')
     <div class="d-flex justify-content-center align-content-center h-50 slide" >
         <img src="{{asset('img/slide.png')}}"  class="w-100" height="650">
     </div>
-
     <div class="container">
 
         <div class="d-flex p-5 flex-column">
@@ -19,7 +19,7 @@
                     is called the flag, hence the name!
                 </p>
             </div>
-
+            
             <div class="p-2 text-center  " > 
                 <h3>Challenges</h3>
                 <div class="d-flex flex-wrap justify-content-center my-4">

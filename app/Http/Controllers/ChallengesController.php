@@ -28,6 +28,26 @@ class ChallengesController extends Controller
         }
         
     }
+    public function letherlogin($id)
+    {   
+        //user authenticated 
+        if (Auth::check()) {
+            return view('pages.letherlogin',['title' => 'Let Her Login','id' => $id]);
+        }else{
+            return view('auth.login', ['title' => 'Login']);
+        }
+        
+    }
+    public function letherforgot($id)
+    {   
+        //user authenticated 
+        if (Auth::check()) {
+            return view('pages.letherforgot',['title' => 'Let Her Forgot','id' => $id]);
+        }else{
+            return view('auth.login', ['title' => 'Login']);
+        }
+        
+    }
 
     /**
      * Show the form for creating a new resource.

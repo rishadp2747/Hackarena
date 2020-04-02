@@ -68,7 +68,21 @@ class PerformanceController extends Controller
         }
       }
     }
+    public function checkit(Request $request,$id)
+    {
+        $flag= DB::table('challenges')->where('id', $id)->value('challenge_flag');
+        $mothersname = $request->input('mname');
+        $fathersname = $request->input('fname');
+        if($mothersname=="x"){
+            if($fathersname=="y"){
+                return redirect()->route('letherforgot',['id'=>$id])->with('info','This is your flag :-'.$flag);
+            }
+        }
+        else{
+            return redirect()->route('letherforgot',['id'=>$id])->with('info','That was a wrong info!');
+        }
 
+    }
     /**
      * Display the specified resource.
      *

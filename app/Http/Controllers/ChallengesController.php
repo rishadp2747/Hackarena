@@ -25,6 +25,18 @@ class ChallengesController extends Controller
          else{
          return view('auth.login',[ 'title' => 'Login']); }
        }
+       
+
+       public function base($id)
+       {
+       
+           if (Auth::check()) {
+           return view('pages.base', [ 'title' => 'Find me' , 'id' => $id ]);}
+           
+            else{
+            return view('auth.login',[ 'title' => 'Login']); }
+          }
+          
     public function index()
     {
         //

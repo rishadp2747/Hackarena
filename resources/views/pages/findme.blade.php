@@ -39,6 +39,7 @@
             </div>
 
             @include('layout.flag')
+            @include('layout.flash')
         </div>
 
     </div>

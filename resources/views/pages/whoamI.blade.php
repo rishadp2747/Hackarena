@@ -13,7 +13,7 @@
             <div class="p-2 text-center mb-5  " > 
                 
                 <h3>Who am i ?</h3>
-                <img src="{{('img/whoamI.png')}}" class="my-3">
+                <img src="{{asset('img/who am i.png')}}" class="my-3">
             </div>
 
             @include('layout.flag')

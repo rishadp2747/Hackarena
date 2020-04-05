@@ -14,7 +14,7 @@
                 <h3>She Forgot Password</h3>
                  
                     <div class="let-content w-100 mb-5" > 
-                        <form method="POST" action="{{route('checkit',['id'=>$id])}}">
+                        <form method="POST" action="{{route('letherforgotvalidation',['id'=>$id])}}">
                             @csrf
                             <div class="form-group text-left">
                                 <label for="flag">Mother's Name</label>

@@ -27,6 +27,7 @@ Route::get('challenges/findme/{id}', 'ChallengesController@findme')->name('findm
 Route::post('challenges/updation/{id}', 'PerformanceController@store')->name('storePerformance')->middleware('auth');
 Route::get('challenges/letherlogin/{id}', 'ChallengesController@letherlogin')->name('letherlogin')->middleware('auth');
 Route::get('challenges/letherforgot/{id}', 'ChallengesController@letherforgot')->name('letherforgot')->middleware('auth');
-Route::post('challenges/checkit/{id}', 'PerformanceController@checkit')->name('checkit')->middleware('auth');
+Route::post('challenges/letherforgot/checkit/{id}', 'PerformanceController@letherforgotvalidation')->name('letherforgotvalidation')->middleware('auth');
 Route::get('challenges/whoamI/{id}', 'ChallengesController@whoami')->name('whoamI')->middleware('auth');
 Route::get('challenges/logmein/{id}', 'ChallengesController@logmein')->name('logmein')->middleware('auth');
+Route::post('challenges/logmein/checkit/{id}', 'PerformanceController@logmeinvalidation')->name('logmeinvalidation')->middleware('auth');

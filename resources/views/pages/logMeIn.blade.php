@@ -28,15 +28,16 @@
 
                  
                     <div class="let-content w-100 mb-5" > 
-                        <form>
+                        <form method="POST" action="{{route('logmeinvalidation',['id'=>$id])}}">
+                        	 @csrf
                             <div class="form-group text-left">
                                 <label for="flag">Username</label>
-                                <input type="text" class="form-control"  placeholder="Enter Username">
+                                <input type="text" class="form-control"  placeholder="Enter Username" name="user">
                             </div>
 
                             <div class="form-group text-left">
                                 <label for="flag">Password</label>
-                                <input type="password" class="form-control"  placeholder="Enter Password">
+                                <input type="password" class="form-control"  placeholder="Enter Password" name="pass">
                             </div>
 
                             <div class="form-group text-left">

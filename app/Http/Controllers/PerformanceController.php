@@ -72,7 +72,7 @@ class PerformanceController extends Controller
         }
       }
     }
-    public function checkit(Request $request,$id)
+    public function letherforgotvalidation(Request $request,$id)
     {
         $flag= DB::table('challenges')->where('id', $id)->value('challenge_flag');
         $mothersname = $request->input('mname');
@@ -84,6 +84,21 @@ class PerformanceController extends Controller
         }
         else{
             return redirect()->route('letherforgot',['id'=>$id])->with('info','That was a wrong info!');
+        }
+
+    }
+    public function logmeinvalidation(Request $request,$id)
+    {
+        $flag= DB::table('challenges')->where('id', $id)->value('challenge_flag');
+        $username = $request->input('user');
+        $password = $request->input('pass');
+        if($username=="x"){
+            if($password=="y"){
+                return redirect()->route('letherforgot',['id'=>$id])->with('info','This is your flag :-'.$flag);
+            }
+        }
+        else{
+            return redirect()->back()->with('info','That was a wrong info!');
         }
 
     }

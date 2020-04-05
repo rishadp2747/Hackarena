@@ -66,6 +66,10 @@ class PerformanceController extends Controller
             return redirect()->route('home')->with('success','Congragulations!');
 
         }
+        else
+        {
+            return redirect()->back()->with('info','That Is a Wrong Flag!');
+        }
       }
     }
     public function checkit(Request $request,$id)

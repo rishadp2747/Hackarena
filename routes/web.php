@@ -28,3 +28,5 @@ Route::post('challenges/updation/{id}', 'PerformanceController@store')->name('st
 Route::get('challenges/letherlogin/{id}', 'ChallengesController@letherlogin')->name('letherlogin')->middleware('auth');
 Route::get('challenges/letherforgot/{id}', 'ChallengesController@letherforgot')->name('letherforgot')->middleware('auth');
 Route::post('challenges/checkit/{id}', 'PerformanceController@checkit')->name('checkit')->middleware('auth');
+Route::get('challenges/whoamI/{id}', 'ChallengesController@whoami')->name('whoamI')->middleware('auth');
+Route::get('challenges/logmein/{id}', 'ChallengesController@logmein')->name('logmein')->middleware('auth');

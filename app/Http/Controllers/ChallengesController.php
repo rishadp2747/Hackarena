@@ -38,11 +38,31 @@ class ChallengesController extends Controller
         }
         
     }
+    public function logmein($id)
+    {   
+        //user authenticated 
+        if (Auth::check()) {
+            return view('pages.logmein',['title' => 'Log Me In','id' => $id]);
+        }else{
+            return view('auth.login', ['title' => 'Login']);
+        }
+        
+    }
     public function letherforgot($id)
     {   
         //user authenticated 
         if (Auth::check()) {
             return view('pages.letherforgot',['title' => 'Let Her Forgot','id' => $id]);
+        }else{
+            return view('auth.login', ['title' => 'Login']);
+        }
+        
+    }
+    public function whoami($id)
+    {   
+        //user authenticated 
+        if (Auth::check()) {
+            return view('pages.who',['title' => 'Who Am I','id' => $id]);
         }else{
             return view('auth.login', ['title' => 'Login']);
         }

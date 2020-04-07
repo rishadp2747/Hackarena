@@ -40,6 +40,8 @@
 
             @include('layout.flag')
             @include('layout.flash')
+            @include('layout.success')
+
         </div>
 
     </div>

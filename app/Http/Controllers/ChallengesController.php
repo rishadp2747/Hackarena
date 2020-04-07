@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Auth\Middleware\Authenticate;
 
@@ -15,6 +16,7 @@ class ChallengesController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
     public function findme($id)
     {
@@ -26,21 +28,32 @@ class ChallengesController extends Controller
          return view('auth.login',[ 'title' => 'Login']); }
        }
        
-
-       public function base($id)
+      public function index($id)
        {
-       
-           if (Auth::check()) {
-           return view('pages.base', [ 'title' => 'Find me' , 'id' => $id ]);}
-           
+            if (Auth::check()) {
+            return view('pages.base', [ 'title' => 'base' , 'id' => $id ]);}
+            
             else{
             return view('auth.login',[ 'title' => 'Login']); }
+       }
+      /**         
+      * @param  \Illuminate\Http\Request
+      *  @return \Illuminate\Http\Response
+     */
+       public function base(Request $request,$id)
+       {
+          $base = $request->input('base');
+          $flag= DB::table('challenges')->where('id', $id)->value('challenge_flag');
+          if($base == 'x')
+          {
+           return redirect()->back()->with('info',$flag);
           }
-          
-    public function index()
-    {
-        //
-    }
+          else
+              {
+                  
+             return redirect()-> back()->with('error','Invalid Code');
+            } 
+        }
 
     /**
      * Show the form for creating a new resource.

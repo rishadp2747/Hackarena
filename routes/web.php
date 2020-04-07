@@ -25,9 +25,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('challenge','ChallengesController');
 
 Route::get('/challenges/findme/{id}','ChallengesController@findme')->name('findme')->middleware('auth');
-
-Route::get('/challenges/base/{id}','ChallengesController@base')->name('base')->middleware('auth');
-
+Route::get('/challenges/base/{id}','ChallengesController@index')->name('base')->middleware('auth');
+Route::post('/challenges/base/crypto/{id}','ChallengesController@base')->name('crypto');
 Route::post('/challenges/updation/{id}','PerformanceController@store')->name('storePerformance')->middleware('auth');
 
 

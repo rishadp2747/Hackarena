@@ -7,8 +7,6 @@
     
 
     <div class="container">
-
-            @include('layout.flash')
         <div class="d-flex p-5 flex-column">
             <div class="p-2 text-center mb-5  " > 
                 
@@ -22,17 +20,16 @@
                 </p>
                                   
                 <div class="let-content w-100 mb-5" > 
-                    <form method="POST" action="{{route('base',['id' => $id]}}">
+                    <form method="POST" action="{{route('crypto',['id' => $id])}}">
+                    @csrf
                         <div class="form-group text-left">
-                            <input type="text" class="form-control"  placeholder="Enter Code here">
+                            <input type="text" class="form-control" id="base" name="base" placeholder="Enter Code here">
                         </div>
-                        <button type="submit" class="btn btn-outline-primary ml-2 ">Submit</button>
+                        <button type="submit" class="btn btn-outline-primary ml-2">Submit</button>
+                        @include('layout.flash')
                     </form>
+                      </div>
                 </div>
-                
-
-            </div>
-
             @include('layout.flag')
         </div>
 

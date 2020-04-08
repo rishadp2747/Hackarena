@@ -7,6 +7,7 @@
     
 
     <div class="container">
+    @include('layout.flash')
         <div class="d-flex p-5 flex-column">
             <div class="p-2 text-center mb-5  " > 
                 
@@ -26,7 +27,6 @@
                             <input type="text" class="form-control" id="base" name="base" placeholder="Enter Code here">
                         </div>
                         <button type="submit" class="btn btn-outline-primary ml-2">Submit</button>
-                        @include('layout.flash')
                     </form>
                       </div>
                 </div>

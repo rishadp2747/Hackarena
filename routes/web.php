@@ -28,5 +28,8 @@ Route::get('/challenges/findme/{id}','ChallengesController@findme')->name('findm
 Route::get('/challenges/base/{id}','ChallengesController@index')->name('base')->middleware('auth');
 Route::post('/challenges/base/crypto/{id}','ChallengesController@base')->name('crypto');
 Route::post('/challenges/updation/{id}','PerformanceController@store')->name('storePerformance')->middleware('auth');
+Route::get('/challenges/injection/{id}','ChallengesController@injectionview')->name('injection')->middleware('auth');
+Route::post('/challenges/injection/sql/{id}','ChallengesController@injection')->name('inject');
+
 
 

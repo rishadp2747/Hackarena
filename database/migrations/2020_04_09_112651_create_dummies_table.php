@@ -15,6 +15,8 @@ class CreateDummiesTable extends Migration
     {
         Schema::create('dummies', function (Blueprint $table) {
             $table->id();
+            $table->string('username');
+            $table->string('password');
             $table->timestamps();
         });
     }

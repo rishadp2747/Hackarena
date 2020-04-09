@@ -30,6 +30,7 @@
                  
                     <div class="let-content w-100 mb-5" > 
                         <form method="POST" action="{{route('checkinjection')}}">
+                            @csrf
                             <div class="form-group text-left">
                                 <label for="username">Username</label>
                                 <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" placeholder="Enter Username">
@@ -42,7 +43,7 @@
 
                             <div class="form-group text-left">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control @error('password') is-invalid @enderror" password="password" placeholder="Enter Password">
+                                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" password="password" placeholder="Enter Password">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

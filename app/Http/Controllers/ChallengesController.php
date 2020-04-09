@@ -121,7 +121,7 @@ class ChallengesController extends Controller
 
     public function injection($id){
         //function to show injection challenge page
-        return view('pages.secretMessage',['title' => 'Injection for CORONA', 'id' => $id]);
+        return view('pages.injection',['title' => 'Injection for CORONA', 'id' => $id]);
     }
 
 
@@ -207,12 +207,13 @@ class ChallengesController extends Controller
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
-        }elseif($request->input('message') === 'x'){
-            $flag = DB::table('challenges')->where('challenge_route', 'secretmessage' )->value('challenge_flag');
+        }elseif(DB::table('dummies')->select('id')->whereRaw("username = '".$request->input('username')."' and password = '".$request->input('password')."' ")->count() == 1){
+            $flag = DB::table('challenges')->where('challenge_route', 'injection' )->value('challenge_flag');
             return redirect()->back()->with('success', $flag);
         }else{
             return redirect()->back()->with('error','Invalid Details');
         }
+
     }
 
 

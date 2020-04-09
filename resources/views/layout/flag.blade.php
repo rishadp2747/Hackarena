@@ -4,7 +4,7 @@
                 @csrf
             <div class="form-group d-flex flex-row">
                 <label for="flag">Flag</label>
-                <input type="text"autofocus class="form-control mx-4 w-100 @error('flag') is-invalid @enderror" id="flag" name="flag" aria-describedby="flagHelp" placeholder="Eg: flag{sbfvhyfvwr2389r3hjdd}">
+                <input type="text" class="form-control mx-4 w-100 @error('flag') is-invalid @enderror" id="flag" name="flag" aria-describedby="flagHelp" placeholder="Eg: flag{sbfvhyfvwr2389r3hjdd}">
                 @error('flag')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

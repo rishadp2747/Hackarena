@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg ">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{{route('home')}}">
         <img src="{{asset('img/logo/logo.png')}}" width="50" height="50" class="d-inline-block align-middle mr-3" alt="">
         Hackarena 2.0
     </a>
@@ -17,10 +17,12 @@
                 @endif
             @else 
                 <li class="nav-item mr-3 p-2">
+                    <a href='{{route("home")}}'>Home </a>
                     
+                </li>
+                <li class="nav-item mr-3 p-2">
                         <a>Score : {{ Auth::user()->total_score  }}</a>
                     
-                
                 </li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -44,6 +44,9 @@ Route::post('challenges/secretmessage','ChallengesController@checkMessage')->nam
 Route::get('challenges/injection/{id}','ChallengesController@injection')->name('injection')->middleware('auth');
 Route::post('challenges/injection','ChallengesController@checkInjection')->name('checkinjection')->middleware('auth');
 
+Route::get('challenges/login/{id}','ChallengesController@login')->name('loginme')->middleware('auth');
+Route::post('challenges/login','ChallengesController@checkLogin')->name('checklogin')->middleware('auth');
+
 
 
 

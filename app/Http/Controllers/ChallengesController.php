@@ -125,6 +125,11 @@ class ChallengesController extends Controller
     }
 
 
+    public function login($id){
+        //function to show injection challenge page
+        return view('pages.login',['title' => 'Login', 'id' => $id]);
+    }
+
 
 
 
@@ -209,6 +214,29 @@ class ChallengesController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }elseif(DB::table('dummies')->select('id')->whereRaw("username = '".$request->input('username')."' and password = '".$request->input('password')."' ")->count() == 1){
             $flag = DB::table('challenges')->where('challenge_route', 'injection' )->value('challenge_flag');
+            return redirect()->back()->with('success', $flag);
+        }else{
+            return redirect()->back()->with('error','Invalid Details');
+        }
+
+    }
+
+
+    public function checkLogin(Request $request){
+        //function to check the details to push flag
+
+        //Don't passed id because by altering the id's in url there is a chance of seeing another flags
+        //So don't change the route_name of the challnge injection
+
+        $validator = Validator::make($request->all(), [
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }elseif($request->input('username') === 'x' and $request->input('password') === 'y'){
+            $flag = DB::table('challenges')->where('challenge_route', 'loginme' )->value('challenge_flag');
             return redirect()->back()->with('success', $flag);
         }else{
             return redirect()->back()->with('error','Invalid Details');

@@ -115,8 +115,13 @@ class ChallengesController extends Controller
     }
 
     public function secretMessage($id){
-        //function to show chessBoard challenge page
+        //function to show secretmessage challenge page
         return view('pages.secretMessage',['title' => 'Secret Messsage Form NASA', 'id' => $id]);
+    }
+
+    public function injection($id){
+        //function to show injection challenge page
+        return view('pages.secretMessage',['title' => 'Injection for CORONA', 'id' => $id]);
     }
 
 
@@ -172,10 +177,32 @@ class ChallengesController extends Controller
         //function to check the details to push flag
 
         //Don't passed id because by altering the id's in url there is a chance of seeing another flags
-        //So don't change the route_name of the challnge checkboard
+        //So don't change the route_name of the challnge secremessage
 
         $validator = Validator::make($request->all(), [
             'message' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }elseif($request->input('message') === 'x'){
+            $flag = DB::table('challenges')->where('challenge_route', 'secretmessage' )->value('challenge_flag');
+            return redirect()->back()->with('success', $flag);
+        }else{
+            return redirect()->back()->with('error','Invalid Details');
+        }
+    }
+
+
+    public function checkInjection(Request $request){
+        //function to check the details to push flag
+
+        //Don't passed id because by altering the id's in url there is a chance of seeing another flags
+        //So don't change the route_name of the challnge injection
+
+        $validator = Validator::make($request->all(), [
+            'username' => 'required',
+            'password' => 'required',
         ]);
 
         if ($validator->fails()) {

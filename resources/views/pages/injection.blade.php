@@ -29,19 +29,25 @@
 
                  
                     <div class="let-content w-100 mb-5" > 
-                        <form>
+                        <form method="POST" action="{{route('checkinjection')}}">
                             <div class="form-group text-left">
-                                <label for="flag">Username</label>
-                                <input type="text" class="form-control" name="username" placeholder="Enter Username">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" placeholder="Enter Username">
+                                @error('username')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
 
                             <div class="form-group text-left">
-                                <label for="flag">Password</label>
-                                <input type="password" class="form-control" password="password" placeholder="Enter Password">
-                            </div>
-
-                            <div class="form-group text-left">
-                                <a href="{{route('letherforgot',['id' => $id ])}}">Forgot my password</a>
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control @error('password') is-invalid @enderror" password="password" placeholder="Enter Password">
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
 
                             <button type="submit" class="btn btn-outline-primary ml-2 ">Login</button>

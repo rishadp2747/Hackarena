@@ -41,6 +41,10 @@ Route::post('challenges/chessboard','ChallengesController@checkBoard')->name('ch
 Route::get('challenges/secretmessage/{id}','ChallengesController@secretmessage')->name('secretmessage')->middleware('auth');
 Route::post('challenges/secretmessage','ChallengesController@checkMessage')->name('checkmessage')->middleware('auth');
 
+Route::get('challenges/injection/{id}','ChallengesController@injection')->name('injection')->middleware('auth');
+Route::post('challenges/injection','ChallengesController@checkInjection')->name('checkinjection')->middleware('auth');
+
+
 
 
 

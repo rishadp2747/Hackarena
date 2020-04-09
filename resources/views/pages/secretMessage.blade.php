@@ -12,9 +12,9 @@
         <div class="d-flex p-5 flex-column">
             <div class="p-2 text-center mb-5  " > 
                 
-                <h3>Secret Message From ISRO</h3>
+                <h3>Secret Message From NASA</h3>
                 <p></p>
-                <a href="{{asset('audio/message.wave')}}" download>This is message</a>
+                <a href="{{asset('audio/message.mp3')}}" download>This is message</a>
                
             </div>
 

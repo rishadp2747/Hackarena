@@ -168,6 +168,26 @@ class ChallengesController extends Controller
         }
     }
 
+    public function checkMessage(Request $request){
+        //function to check the details to push flag
+
+        //Don't passed id because by altering the id's in url there is a chance of seeing another flags
+        //So don't change the route_name of the challnge checkboard
+
+        $validator = Validator::make($request->all(), [
+            'message' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }elseif($request->input('message') === 'x'){
+            $flag = DB::table('challenges')->where('challenge_route', 'secretmessage' )->value('challenge_flag');
+            return redirect()->back()->with('success', $flag);
+        }else{
+            return redirect()->back()->with('error','Invalid Details');
+        }
+    }
+
 
 
 }

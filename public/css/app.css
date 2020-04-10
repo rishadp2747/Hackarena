@@ -10976,7 +10976,7 @@ label {
 }
 
 .let-content .form-group input {
-  border-radius: 0px;
+  border-radius: 5px;
   background-color: transparent;
   border: 1px solid #4dc5ff;
   color: #4dc5ff;
@@ -10998,9 +10998,13 @@ button {
 }
 
 .dropdown-menu {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   border: 1px solid #4d4dff47;
   color: white;
+}
+
+.dropdown-item span {
+  float: right;
 }
 
 .dropdown-item:hover,

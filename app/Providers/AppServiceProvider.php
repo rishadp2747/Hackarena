@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        $roles = DB::table('challenges')->select('challenge_name', 'challenge_route','id')->get();
+        $roles = DB::table('challenges')->select('challenge_name', 'challenge_route','id','challenge_score')->get();
         View::share('challenges',$roles);
         schema::defaultStringLength(191);
         

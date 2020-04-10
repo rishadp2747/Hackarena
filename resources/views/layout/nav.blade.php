@@ -13,7 +13,7 @@
                     </a>
                     <div class="dropdown-menu ch" aria-labelledby="navbarDropdown">
                     @foreach ($challenges as $item)
-                        <a class="dropdown-item" href='{{route($item->challenge_route, ['id' => $item->id])}}'>{{$item->challenge_name}}</a>
+                        <a class="dropdown-item" href='{{route($item->challenge_route, ['id' => $item->id])}}'>{{$item->challenge_name}} <span>{{$item->challenge_score}} </span></a>
                          
                     @endforeach
                     

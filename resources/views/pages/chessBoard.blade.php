@@ -13,6 +13,13 @@
             <div class="p-2 text-center mb-5  " > 
                 
                 <h3>Chess Board</h3>
+                <h4>Score - 
+                    @foreach ($challenges as $item)
+                        @if ($item->id == $id)
+                            {{$item->challenge_score}} 
+                        @endif
+                    @endforeach
+                  </h4>
                 <p class="p-3 text-left">
                     "Oh emperor, my wishes are simple. I only wish for this. Give me one grain of rice for the first square of the chessboard, two grains for the next square, four for the next, eight for the next and so on for all 64 squares, with each square having double the number of grains as the square before."
                 </p>

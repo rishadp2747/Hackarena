@@ -13,6 +13,13 @@
             <div class="p-2 text-center mb-5  " > 
                 
                 <h3>Find Me</h3>
+                <h4>Score - 
+                 @foreach ($challenges as $item)
+                        @if ($item->id == $id)
+                            {{$item->challenge_score}} 
+                        @endif
+                    @endforeach
+                  </h4>
                 <p class="text-justify p-3">
                     Once there lived an old farmer. He had three sons.
                     The farmer worked on his farm. He asked his sons to work too.

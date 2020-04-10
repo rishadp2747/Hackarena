@@ -13,6 +13,13 @@
             <div class="p-2 text-center mb-5  " > 
                 
                 <h3>Who am i ?</h3>
+                <h4>Score - 
+                 @foreach ($challenges as $item)
+                        @if ($item->id == $id)
+                            {{$item->challenge_score}} 
+                        @endif
+                    @endforeach
+                  </h4>
                 <a href="{{asset('img/who am i.png')}}" download>
                     <img src="{{asset('img/who am i.png')}}" class="my-3">
                 </a>

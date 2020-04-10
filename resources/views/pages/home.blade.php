@@ -14,7 +14,7 @@
             <div class="p-2 text-center  " > 
                 <h3>About Hackarena</h3>
                 <p class="text-justify p-3">
-                    Welcome to HackArena 2.0. A learning CTF from the developers of CTF. Play around and have fun.
+                    Welcome to HackArena 2.0. A learning CTF from the developers of FCS. Play around and have fun.
                     CTF (Capture The Flag) is a kind of information security competition that challenges contestants 
                     to solve a variety of tasks ranging from a scavenger hunt on wikipedia to basic programming exercises, 
                     to hacking your way into a server to steal data. In these challenges, the contestant is usually asked 

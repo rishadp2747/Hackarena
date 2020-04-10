@@ -13,6 +13,13 @@
             <div class="p-2 text-center mb-5  " > 
                 
                 <h3>Login</h3>
+                <h4>Score - 
+                 @foreach ($challenges as $item)
+                        @if ($item->id == $id)
+                            {{$item->challenge_score}} 
+                        @endif
+                    @endforeach
+                  </h4>
 
 
         

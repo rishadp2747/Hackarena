@@ -13,6 +13,13 @@
             <div class="p-2 text-center mb-5  " > 
                 
                 <h3>Injection</h3>
+                <h4>Score - 
+                 @foreach ($challenges as $item)
+                        @if ($item->id == $id)
+                            {{$item->challenge_score}} 
+                        @endif
+                    @endforeach
+                  </h4>
                 <p class="text-justify p-3">
                     Attention merchants and purveyors of quality hacker-centric products and services:
                      the call for ventors is now open!Let's get your goodies and gear in front of many 

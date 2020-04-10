@@ -235,7 +235,7 @@ class ChallengesController extends Controller
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
-        }elseif($request->input('username') === 'x' and $request->input('password') === 'y'){
+        }elseif($request->input('username') === 'hacker' and $request->input('password') === 'hacked'){
             $flag = DB::table('challenges')->where('challenge_route', 'loginme' )->value('challenge_flag');
             return redirect()->back()->with('success', $flag);
         }else{

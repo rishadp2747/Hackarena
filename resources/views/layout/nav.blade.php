@@ -5,6 +5,24 @@
     </a>
 
     <div class="collapse navbar-collapse" id="navbarText">
+        @auth
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Challenges 
+                    </a>
+                    <div class="dropdown-menu ch" aria-labelledby="navbarDropdown">
+                    @foreach ($challenges as $item)
+                        <a class="dropdown-item" href='{{route($item->challenge_route, ['id' => $item->id])}}'>{{$item->challenge_name}}</a>
+                         
+                    @endforeach
+                    
+                    </div>
+                </li>
+            </ul>
+            
+        @endauth
+        
         <ul class="navbar-nav ml-auto">
             @guest
                 <li class="nav-item">

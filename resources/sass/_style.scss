@@ -68,7 +68,7 @@ a{
 .register-content{
     padding: 8px 100px 8px 100px;
     margin: 10px 100px 10px 100px;
-    box-shadow: 0px -1px 14px 2px #4d4dff47;
+   
     
 }
 
@@ -90,11 +90,12 @@ label{
 }
 
 .register-content .form-group input{
-    border-radius: 0px;
+    border-radius: 5px;
     background-color: transparent;
     border: 1px solid  #4dc5ff;
     color: #4dc5ff;
     font-size: 20px;
+    
 }
 
 .let-content{
@@ -107,10 +108,11 @@ label{
     border: 1px solid  #4dc5ff;
     color: #4dc5ff;
     font-size: 20px;
+
 }
 
 button{
-    border-radius: 0px !important;
+    border-radius: 5px !important;
     width: 200px;
     font-size: 18px !important;
 
@@ -131,8 +133,8 @@ button{
 }
 
 .dash-btn{
-    border-radius: 0px !important;
-    width: 200px;
+    border-radius: 5px !important;
+   
     font-size: 18px !important;
 }
 

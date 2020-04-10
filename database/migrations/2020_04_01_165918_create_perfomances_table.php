@@ -16,15 +16,16 @@ class CreatePerfomancesTable extends Migration
         Schema::create('perfomances', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->bigInteger('challenge_id');
-            $table->foreign('challenge_id')->references('id')->on('challenges');
-            $table->bigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->bigInteger('challenge_id')->unsigned();
+
+            $table->bigInteger('user_id')->unsigned();
+
             $table->dateTime('start_time');
             $table->dateTime('end_time');
-            
-            
-            
+
+            $table->foreign('challenge_id')->references('id')->on('challenges');
+            $table->foreign('user_id')->references('id')->on('users');
+
         });
     }
 

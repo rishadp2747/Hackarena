@@ -15,7 +15,11 @@ use Illuminate\Auth\Middleware\Authenticate;
 */
 
 Route::get('/', function () {
-    return view('pages.home',['title'=>'Home']);
+    if (Auth::check()) {
+        return redirect()->route('home');
+    }else{
+        return view('pages.home',['title'=>'Home']);
+    }
 });
 
 

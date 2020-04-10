@@ -190,7 +190,7 @@ class ChallengesController extends Controller
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
-        }elseif($request->input('message') === 'x'){
+        }elseif($request->input('message') === 'FCS IS JUST AWESOME'){
             $flag = DB::table('challenges')->where('challenge_route', 'secretmessage' )->value('challenge_flag');
             return redirect()->back()->with('success', $flag);
         }else{

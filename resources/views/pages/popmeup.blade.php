@@ -5,16 +5,18 @@
 <div class="d-flex p-5 flex-column">
             <div class="p-2 text-center mb-5  " > 
                 
-                <h3>popMeUp</h3>
+                <h2>popMeUp</h2>
                 <p class="p-3">
                    enter the credentials
                 </p>
                                   
-                <div class="let-content w-100 mb-5" > 
+                <div class="let-content w-50 mx-auto" > 
                     <form name="popMeUpform" action="" method="GET">
                     Enter the data: <br>
-                    <input type="text" name="inputbox" value="" id="popMeUp">
-                    <input type="button" name="button" value="click">
+                    <div class="form-group text-left  ">
+                    <input type="text" name="inputbox" autofocus class="form-control  " maxlength="5" value="" id="popMeUp">
+                    </div>
+                    <button type="submit" name="button" class="btn btn-outline-primary ml-2" value="click">Submit</button>
                     </form>
                       </div>
                 </div>

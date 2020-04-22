@@ -72,24 +72,16 @@ class ChallengesController extends Controller
       * @param  \Illuminate\Http\Request
       *  @return \Illuminate\Http\Response
      */
-    public function injection(Request $request,$id)
-    {
-      $injection_username = $request->input('injection_username');
-      $injection_password = $request->input('password');
-      $username=DB::raw("SELECT username FROM injection WHERE id='1'");
-      $password=DB::raw("SELECT password FROM injection WHERE id='1'");
-    //   $i=DB::raw("SELECT id FROM injection WHERE username='".$username."' AND password='".$password."'");
-      $flag= DB::table('challenges')->where('id', $id)->value('challenge_flag');
-      if($injection_username==$username && $injection_password == $password){ 
+   public function popMeUp($id)
+   {
+    if (Auth::check()) {
+        return view('pages.popMeUp', [ 'title' => 'popmeup' , 'id' => $id ]);}
         
-        return redirect()->back()->with('info',$flag);
-    }
-    else
-        {
-         return redirect()->back()->with('error','Invalid credentials');
-      } 
+        else{
+        return view('auth.login',[ 'title' => 'Login']); }
+
+   }
       
-    }
     public function create()
     {
         //

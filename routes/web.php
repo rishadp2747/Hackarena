@@ -30,6 +30,7 @@ Route::post('/challenges/base/crypto/{id}','ChallengesController@base')->name('c
 Route::post('/challenges/updation/{id}','PerformanceController@store')->name('storePerformance')->middleware('auth');
 Route::get('/challenges/injection/{id}','ChallengesController@injectionview')->name('injection')->middleware('auth');
 Route::post('/challenges/injection/sql/{id}','ChallengesController@injection')->name('inject');
+Route::get('/challenges/popmeup/{id}','ChallengesController@popMeUp')->name('popmeup')->middleware('auth');
 
 
 

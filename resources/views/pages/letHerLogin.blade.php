@@ -12,7 +12,7 @@
         <div class="d-flex p-5 flex-column">
             <div class="p-2 text-center mb-5  " > 
                 
-                <h3>Let Her Login</h3>
+                <h3>Let Him Login</h3>
                 <h4>Score - 
                  @foreach ($challenges as $item)
                         @if ($item->id == $id)
@@ -21,18 +21,27 @@
                     @endforeach
                   </h4>
                 <p class="text-justify p-3">
-                    Attention merchants and purveyors of quality hacker-centric products and services:
-                     the call for ventors is now open!Let's get your goodies and gear in front of many 
-                     thousands of hacker types:-many of whom enjoy shopping for cool stuff.
+                    Once upon a time, Kevin was the most elusive computer break-in artist in history. His famous ‘electronic joyride’ made him part of the FBI’s most wanted list for hacking into more than 40 major corporations, just for the challenge of it. 
                   </p>
                   <p class="text-justify p-3">
-                    There are a few rules to learn an application process,so please head to and get
-                     familiar.please also note that we have a limited amount of space to offer, so the 
-                     early birds have an advantage.
+                    Kevin gained access to the computers and networks of the world's biggest companies while eluding the authorities through phone switches, computer systems and cellular networks. For three years he went on the run, using false identities and escaping from city to city until a final showdown with the Feds, who would stop at nothing to bring him down. 
                   </p>
                   <p class="text-justify p-3">
-                    Operators are standing by metaphorically speaking. ACT NOW !!!
+                    Kevin’s creativity, skills and persistence forced the authorities to rethink the way they pursued hackers. Those ripples brought permanent changes to the way companies and people protect their most sensitive information. His story became legendary and is the basis for many books, articles, films and TV programs.
                   </p>
+
+                  <p class="text-justify p-3">
+                    Today, Kevin is a trusted security consultant to the Fortune 500 and governments worldwide. 
+                </p>
+
+                    <p class="text-justify p-3">
+                            As the CEO of Mitnick Security Consulting, Kevin, and The Global Ghost Team™ now maintain a 100 percent successful track record in their ability to penetrate the security of any system they’re paid to hack, using a combination of technical exploits and social engineering. 
+                    </p>
+
+                    <p class="text-justify p-3">
+                            In his role of Chief Hacking Officer of KnowBe4 he endorses and helps produce the world's #1 security awareness training and platform to train employees to better manage the urgent IT security problems of social engineering, spear phishing and ransomware attacks.
+                    </p>
+                        
 
                  
                     <div class="let-content w-100 mb-5" > 

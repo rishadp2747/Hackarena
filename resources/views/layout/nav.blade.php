@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg ">
+<nav id="app" class="navbar navbar-expand-lg ">
     <a class="navbar-brand" href="{{route('home')}}">
         <img src="{{asset('img/logo/logo.png')}}" width="50" height="50" class="d-inline-block align-middle mr-3" alt="">
         Hackarena 2.0

@@ -11040,3 +11040,13 @@ button.close {
   /* Add a pointer on hover */
 }
 
+.fill {
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  height: 32px !important;
+  width: 200px !important;
+  border-bottom: 1px dashed !important;
+  border-radius: 0px !important;
+}
+

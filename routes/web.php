@@ -51,6 +51,15 @@ Route::post('challenges/injection','ChallengesController@checkInjection')->name(
 Route::get('challenges/login/{id}','ChallengesController@login')->name('loginme')->middleware('auth');
 Route::post('challenges/login','ChallengesController@checkLogin')->name('checklogin')->middleware('auth');
 
+Route::get('challenges/osint/{id}','ChallengesController@osint')->name('osint')->middleware('auth');
+Route::post('challenges/osint','ChallengesController@checkLogin')->name('checklogin')->middleware('auth');
+
+Route::get('challenges/quiz/{id}','ChallengesController@quiz')->name('quiz')->middleware('auth');
+Route::post('challenges/quiz','ChallengesController@checkLogin')->name('checklogin')->middleware('auth');
+
+Route::get('challenges/popmeup/{id}','ChallengesController@popmeup')->name('popmeup')->middleware('auth');
+Route::post('challenges/popmeup','ChallengesController@checkLogin')->name('checklogin')->middleware('auth');
+
 
 
 

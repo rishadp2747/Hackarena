@@ -126,8 +126,23 @@ class ChallengesController extends Controller
 
 
     public function login($id){
-        //function to show injection challenge page
+        //function to show log challenge page
         return view('pages.login',['title' => 'Login', 'id' => $id]);
+    }
+
+    public function osint($id){
+        //function to show Osint challenge page
+        return view('pages.osint',['title' => 'OSINT', 'id' => $id]);
+    }
+
+    public function quiz($id){
+        //function to show quiz challenge page
+        return view('pages.quiz',['title' => 'Quiz', 'id' => $id]);
+    }
+
+    public function popmeup($id){
+        //function to show quiz challenge page
+        return view('pages.popmeup',['title' => 'Pop Me Up', 'id' => $id]);
     }
 
 
@@ -149,7 +164,7 @@ class ChallengesController extends Controller
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
-        }elseif($request->input('mother') === 'x' and $request->input('father') === 'y'){
+        }elseif($request->input('mother') === 'Rochell Kramer' and $request->input('father') === 'Alan Mitnic'){
             $flag = DB::table('challenges')->where('challenge_route', 'letherlogin' )->value('challenge_flag');
             return redirect()->back()->with('success', $flag);
         }else{
@@ -170,7 +185,7 @@ class ChallengesController extends Controller
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
-        }elseif($request->input('code') === 'x'){
+        }elseif($request->input('code') === 'FCS Devloped Hackarena CTF'){
             $flag = DB::table('challenges')->where('challenge_route', 'chessboard' )->value('challenge_flag');
             return redirect()->back()->with('success', $flag);
         }else{

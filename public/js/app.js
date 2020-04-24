@@ -49505,6 +49505,8 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./pop */ "./resources/js/pop.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -49643,6 +49645,27 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pop.js":
+/*!*****************************!*\
+  !*** ./resources/js/pop.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  window.popme = function popme() {
+    alert('flag{fawebd1230190n}');
+    return false;
+  };
+
+  $('#popbtn').click(function () {
+    var temp = '<p style="display:none;">' + $('#pop').val() + '</p>';
+    $('#space').append(temp);
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -49661,8 +49684,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /media/rishad/Documents/FCS/Hackarena/15 march 2020/dev/hackarena/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /media/rishad/Documents/FCS/Hackarena/15 march 2020/dev/hackarena/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! F:\xampp\htdocs\hackarena-2.0\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! F:\xampp\htdocs\hackarena-2.0\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

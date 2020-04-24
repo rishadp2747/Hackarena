@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+require('./pop');
 
 window.Vue = require('vue');
 

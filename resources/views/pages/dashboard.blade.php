@@ -7,7 +7,7 @@
     @include('layout.nav')
 
     <div class="d-flex justify-content-center align-content-center h-50 slide" >
-        <img src="{{asset('img/slide.png')}}"  class="w-100" height="650">
+        <img src="{{asset('img/slide.jpeg')}}"  class="w-100" height="650">
     </div>
 
     <div class="container">
@@ -30,8 +30,13 @@
                 <div class="d-flex flex-wrap justify-content-center my-4">
 
                     @foreach ($challenges as $item)
-                        <a role="button" class="btn  btn-outline-primary dash-btn btn-lg m-3" href='{{route($item->challenge_route, ['id' => $item->id])}}'>{{$item->challenge_name}}</a>
+                        @if ($item->challenge_name != 'Quiz 1' and $item->challenge_name != 'Quiz 2' and $item->challenge_name != 'Quiz 3' and $item->challenge_name != 'Quiz 3' and $item->challenge_name != 'Quiz 4' and $item->challenge_name != 'Quiz 5' )
+                            <a role="button" class="btn  btn-outline-primary dash-btn btn-lg m-3" href='{{route($item->challenge_route, ['id' => $item->id])}}'>{{$item->challenge_name}}</a>  
+                        @endif
+                        
+
                     @endforeach
+                    <a role="button" class="btn  btn-outline-primary dash-btn btn-lg m-3" href='{{route('quiz', ['id' => '11'])}}'>Quiz</a>  
                         
                 </div>
             </div>

@@ -7,6 +7,7 @@ use Exception;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ChallengesController extends Controller
 {
@@ -87,6 +88,14 @@ class ChallengesController extends Controller
     }
 
 
+    public function home(){
+        
+        if (Auth::check()) {
+            return redirect()->route('home');
+        }else{
+            return view('pages.home',['title'=>'Home']);
+        }
+    }
 
     public function findme($id){
         //function to show findme challenge page
@@ -146,7 +155,7 @@ class ChallengesController extends Controller
     }
 
 
-
+   
 
 
 
@@ -252,6 +261,103 @@ class ChallengesController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }elseif($request->input('username') === 'hacker' and $request->input('password') === 'hacked'){
             $flag = DB::table('challenges')->where('challenge_route', 'loginme' )->value('challenge_flag');
+            return redirect()->back()->with('success', $flag);
+        }else{
+            return redirect()->back()->with('error','Invalid Details');
+        }
+
+    }
+
+    public function checkAnswer(Request $request){
+        $validator = Validator::make($request->all(), [
+            'ans' => 'required',
+        ]);
+
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }elseif($request->input('ans') === '2019-04-17'){
+            $flag = DB::table('challenges')->where('challenge_route', 'osint'  )->value('challenge_flag');
+            return redirect()->back()->with('success', $flag);
+        }else{
+            return redirect()->back()->with('error','Invalid Details');
+        }
+
+    }
+
+    public function checkAnswer1(Request $request){
+        $validator = Validator::make($request->all(), [
+            'ans' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }elseif($request->input('ans') === 'XSS' or $request->input('ans') === 'Cross-Site Scripting XSS' or $request->input('ans') === 'Cross Site Scripting XSS' or $request->input('ans') === 'cross site scripting XSS'){
+            $flag = DB::table('challenges')->where('id', '11' )->value('challenge_flag');
+            return redirect()->back()->with('success', $flag);
+        }else{
+            return redirect()->back()->with('error','Invalid Details');
+        }
+
+    }
+
+    public function checkAnswer2(Request $request){
+        $validator = Validator::make($request->all(), [
+            'ans' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }elseif($request->input('ans') === 'Insecure Deserialization' or strtolower($request->input('ans')) === 'insecure deserialization' or strtoupper($request->input('ans')) === 'INSECURE DESERIALIZATION'){
+            $flag = DB::table('challenges')->where('id', '12' )->value('challenge_flag');
+            return redirect()->back()->with('success', $flag);
+        }else{
+            return redirect()->back()->with('error','Invalid Details');
+        }
+
+    }
+
+    public function checkAnswer3(Request $request){
+        $validator = Validator::make($request->all(), [
+            'ans' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }elseif($request->input('ans') === 'Nmap' or strtolower($request->input('ans')) === 'nmap' or strtoupper($request->input('ans')) === 'NMAP'){
+            $flag = DB::table('challenges')->where('id', '13' )->value('challenge_flag');
+            return redirect()->back()->with('success', $flag);
+        }else{
+            return redirect()->back()->with('error','Invalid Details');
+        }
+
+    }
+
+    public function checkAnswer4(Request $request){
+        $validator = Validator::make($request->all(), [
+            'ans' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }elseif($request->input('ans') === 'Wireshark' or strtolower($request->input('ans')) === 'wireshark' or strtoupper($request->input('ans')) === 'WIRESHARK'){
+            $flag = DB::table('challenges')->where('id', '14' )->value('challenge_flag');
+            return redirect()->back()->with('success', $flag);
+        }else{
+            return redirect()->back()->with('error','Invalid Details');
+        }
+
+    }
+
+    public function checkAnswer5(Request $request){
+        $validator = Validator::make($request->all(), [
+            'ans' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }elseif($request->input('ans') === 'EtterPeak' or strtolower($request->input('ans'))  === 'etterpeak' or  strtoupper($request->input('ans'))  === 'ETTERPEAK'){
+            $flag = DB::table('challenges')->where('id', '15' )->value('challenge_flag');
             return redirect()->back()->with('success', $flag);
         }else{
             return redirect()->back()->with('error','Invalid Details');

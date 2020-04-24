@@ -14,13 +14,7 @@ use Illuminate\Auth\Middleware\Authenticate;
 |
 */
 
-Route::get('/', function () {
-    if (Auth::check()) {
-        return redirect()->route('home');
-    }else{
-        return view('pages.home',['title'=>'Home']);
-    }
-});
+
 
 
 Auth::routes(['verify' => true]);
@@ -29,6 +23,8 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('challenge','ChallengesController');
+
+Route::get('/', 'ChallengesController@home');
 
 Route::get('challenges/findme/{id}', 'ChallengesController@findme')->name('findme')->middleware('auth');
 
@@ -52,32 +48,19 @@ Route::get('challenges/login/{id}','ChallengesController@login')->name('loginme'
 Route::post('challenges/login','ChallengesController@checkLogin')->name('checklogin')->middleware('auth');
 
 Route::get('challenges/osint/{id}','ChallengesController@osint')->name('osint')->middleware('auth');
-Route::post('challenges/osint','ChallengesController@checkLogin')->name('checklogin')->middleware('auth');
+Route::post('challenges/osint','ChallengesController@checkAnswer')->name('checkans')->middleware('auth');
 
 Route::get('challenges/quiz/{id}','ChallengesController@quiz')->name('quiz')->middleware('auth');
-Route::post('challenges/quiz','ChallengesController@checkLogin')->name('checklogin')->middleware('auth');
+Route::post('challenges/quiz1','ChallengesController@checkAnswer1')->name('checkanswer1')->middleware('auth');
+Route::post('challenges/quiz2','ChallengesController@checkAnswer2')->name('checkanswer2')->middleware('auth');
+Route::post('challenges/quiz3','ChallengesController@checkAnswer3')->name('checkanswer3')->middleware('auth');
+Route::post('challenges/quiz4','ChallengesController@checkAnswer4')->name('checkanswer4')->middleware('auth');
+Route::post('challenges/quiz5','ChallengesController@checkAnswer5')->name('checkanswer5')->middleware('auth');
 
 Route::get('challenges/popmeup/{id}','ChallengesController@popmeup')->name('popmeup')->middleware('auth');
-Route::post('challenges/popmeup','ChallengesController@checkLogin')->name('checklogin')->middleware('auth');
 
 
 
-
-
+Route::get('perfomance/{id}','PerfomanceController@not')->middleware('auth');
 Route::post('perfomance/{id}','PerfomanceController@store')->name('storePerfomance')->middleware('auth');
 //to redirect back when perfomance hit with a get request
-Route::get('perfomance/{id}', function () {
-    return redirect()->back();
-});
-
-
-
-
-Route::get('who', function () {
-    return view('pages.who',['title'=>'Home', 'id' => '1']);
-});
-
-
-Route::get('base', function () {
-    return view('pages.base',['title'=>'Home', 'id' => '1']);
-});

@@ -13,9 +13,11 @@
                     </a>
                     <div class="dropdown-menu ch" aria-labelledby="navbarDropdown">
                     @foreach ($challenges as $item)
-                        <a class="dropdown-item" href='{{route($item->challenge_route, ['id' => $item->id])}}'>{{$item->challenge_name}} <span>{{$item->challenge_score}} </span></a>
-                         
+                        @if ($item->challenge_name != 'Quiz 1' and $item->challenge_name != 'Quiz 2' and $item->challenge_name != 'Quiz 3' and $item->challenge_name != 'Quiz 3' and $item->challenge_name != 'Quiz 4' and $item->challenge_name != 'Quiz 5' )
+                            <a class="dropdown-item" href='{{route($item->challenge_route, ['id' => $item->id])}}'>{{$item->challenge_name}} <span>{{$item->challenge_score}} </span></a>
+                        @endif
                     @endforeach
+                    <a class="dropdown-item" href='{{route('quiz', ['id' => '11'])}}'>Quiz<span> 10*5 = 50</span></a>
                     
                     </div>
                 </li>

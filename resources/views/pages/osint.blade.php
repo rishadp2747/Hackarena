@@ -22,10 +22,10 @@
                   </h4>
           
                 <div class="let-content w-100 my-5" > 
-                <form method="POST" action="">
+                <form method="POST" action="{{route('checkans')}}">
                         @csrf
                         <div class="form-group text-left">
-                            <label for="ans">When FCS hosted their server ?</label>
+                            <label for="ans">When FCS domain registered on ?</label>
                             <input type="date" name="ans" class="form-control @error('ans') is-invalid @enderror"  placeholder="Enter Answer here">
                             @error('ans')
                                 <span class="invalid-feedback" role="alert">
@@ -40,7 +40,7 @@
 
             </div>
 
-          
+            @include('layout.flag')
         </div>
 
     </div>

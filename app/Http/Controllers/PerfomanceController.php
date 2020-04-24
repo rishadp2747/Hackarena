@@ -25,6 +25,12 @@ class PerfomanceController extends Controller
         //
     }
 
+    public function not()
+    {
+        //
+        return redirect()->back();
+    }
+
    
 
     private function validator(array $data, $id)
